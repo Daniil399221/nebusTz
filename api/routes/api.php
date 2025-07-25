@@ -21,5 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::middleware(\App\Http\Middleware\ApiStaticKey::class)->group(function () {
     Route::get('buildings/{building}/organizations', [OrganizationController::class, 'getByBuilding']);
+    Route::get('activity/{activity}/organizations', [OrganizationController::class, 'getByActivity']);
+    Route::get('activity/{activity}/organizations-with-children', [OrganizationController::class, 'byActivityWithChildren']);
 });
 
