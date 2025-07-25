@@ -212,4 +212,5 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+    'api_static_key' => env('API_STATIC_KEY', 'fa30-k4v9-5316-kEQ'),
 ];
