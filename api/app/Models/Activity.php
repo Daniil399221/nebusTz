@@ -9,6 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/*
+ * @property int $id
+ * @property string $name
+ * @property int $parentId
+ * @property int $level
+ */
 class Activity extends Model
 {
     use HasFactory;

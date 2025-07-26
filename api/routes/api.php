@@ -39,9 +39,6 @@ Route::middleware(ApiStaticKey::class)->group(function (): void {
             Route::get('/buildings/{building}/organizations', 'getByBuilding')
                 ->name('organization.buildings.getByBuilding');
 
-            Route::get('/buildings/{building}/organizations', 'getByBuilding')
-                ->name('organization.buildings.getByBuilding');
-
             Route::get('/activity/{activity}/organizations', 'getByActivity')
                 ->name('organization.activity.getByActivity');
 
@@ -50,9 +47,6 @@ Route::middleware(ApiStaticKey::class)->group(function (): void {
 
             Route::get('/radius', 'findInRadius')
                 ->name('organization.radius.getByRadius');
-
-            Route::get('/search/name', 'searchByName')
-                ->name('organization.searchByName');
 
             Route::get('/{organization}', 'getById')
                 ->name('organization.getById');

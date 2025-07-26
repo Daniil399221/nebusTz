@@ -11,12 +11,14 @@ use App\Http\Resources\Organization\OrganizationBuildingResource;
 use App\Models\Activity;
 use App\Models\Building;
 use App\Models\Organization;
-use App\Service\ActivityOrganizationService;
+use App\Service\Organization\ActivityOrganizationService;
+use App\Service\Organization\OrganizationFindService;
 
 class OrganizationController extends Controller
 {
     public function __construct(
         protected ActivityOrganizationService $service,
+        protected OrganizationFindService  $findService,
     ) {}
 
     public function getByBuilding(Building $building)
@@ -52,24 +54,18 @@ class OrganizationController extends Controller
     {
         $data = $request->validated();
 
-        $organizations = Organization::query()->join('buildings', 'organizations.building_id', '=', 'buildings.id')
-            ->whereBetween('buildings.latitude', [$data['min_lat'], $data['max_lat']])
-            ->whereBetween('buildings.longitude', [$data['min_lng'], $data['max_lng']])
-            ->with(['building', 'activity'])
-            ->paginate(15);
+        $organizations = $this->findService->getFindOrganizationsInRadius($data);
 
-        return response()->json($organizations);
+        return response(OrganizationBuildingResource::collection($organizations));
     }
 
     public function byFindName(OrganizationFindNameRequest $request)
     {
         $data = $request->validated();
 
-        $organizations = Organization::query()
-            ->where('name', 'like', '%' . $data['name'] . '%')
-            ->with(['building', 'activity'])
-            ->paginate(15);
+        $organizations = $this->findService->getFindOrganizationsInName($data);
 
-        return response()->json($organizations);
+        return response(OrganizationBuildingResource::collection($organizations));
+
     }
 }

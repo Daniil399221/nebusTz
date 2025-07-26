@@ -7,12 +7,20 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Building\BuildingRequest;
 use App\Http\Resources\Building\BuildingResource;
 use App\Models\Building;
+use App\Service\Building\BuildingFindService;
+use App\Service\Building\BuildingService;
 
 class BuildingController extends Controller
 {
+
+    public function __construct(
+       protected BuildingService $service,
+       protected BuildingFindService $findService
+    ){}
+
     public function index()
     {
-        $data = Building::all();
+        $data = $this->service->getAllBuilding();
 
         return response()->json(BuildingResource::collection($data));
     }
@@ -26,10 +34,7 @@ class BuildingController extends Controller
     {
         $data = $request->validated();
 
-        $buildings = Building::query()->whereBetween('latitude', [$data['min_lat'], $data['max_lat']])
-            ->whereBetween('longitude', [$data['min_lng'], $data['max_lng']])
-            ->with(['organization'])
-            ->paginate(15);
+        $buildings = $this->findService->getFind($data);
 
         return response()->json($buildings);
     }
