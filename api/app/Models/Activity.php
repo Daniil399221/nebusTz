@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,26 +15,24 @@ class Activity extends Model
 
     protected $guarded = [];
 
-
     public function organization(): HasMany
     {
         return $this->hasMany(
-            related: Organization::class
+            related: Organization::class,
         );
     }
 
     public function parent(): BelongsTo
     {
         return $this->belongsTo(
-            related: Activity::class
+            related: self::class,
         );
     }
 
     public function children(): HasMany
     {
         return $this->hasMany(
-            related: Activity::class
+            related: self::class,
         );
     }
-
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use App\Models\Activity;
@@ -22,7 +24,7 @@ class OrganizationFactory extends Factory
             'name' => $this->faker->company,
             'building_id' => Building::all()->random()->id,
             'phone' => '+7' . fake()->unique()->numerify('(9##)#######'),
-            'activity_id' => Activity::where('level', 1)->get()->random()->id,
+            'activity_id' => Activity::all()->random()->id,
         ];
     }
 }

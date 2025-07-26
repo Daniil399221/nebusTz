@@ -1,9 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace app\Http\Resources\Organization;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Override;
 
 class OrganizationActivityResource extends JsonResource
 {
@@ -12,6 +15,7 @@ class OrganizationActivityResource extends JsonResource
      *
      * @return array<string, mixed>
      */
+    #[Override]
     public function toArray(Request $request): array
     {
         return [
@@ -20,7 +24,7 @@ class OrganizationActivityResource extends JsonResource
             'slug' => $this->slug,
             'phone' => $this->phone,
             'activity_id' => $this->activity_id,
-            'building_id' => $this->building_id
+            'building_id' => $this->building_id,
         ];
     }
 }

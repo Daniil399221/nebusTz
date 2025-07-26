@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Middleware;
 
 use Closure;
@@ -17,12 +19,10 @@ class ApiStaticKey
             return response()->json([
                 'error' => 'api-static-key',
                 'message' => 'Invalid Api Static Key',
-                'status' => Response::HTTP_UNAUTHORIZED
+                'status' => Response::HTTP_UNAUTHORIZED,
             ]);
         }
 
         return $next($request);
-
     }
-
 }

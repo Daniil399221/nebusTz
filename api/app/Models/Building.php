@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -15,8 +17,7 @@ class Building extends Model
     public function organization(): HasMany
     {
         return $this->hasMany(
-            related: Organization::class
+            related: Organization::class,
         );
     }
-
 }

@@ -1,0 +1,221 @@
+{
+  "preset": "laravel",
+  "exclude": [
+    "frame"
+  ],
+  "rules": {
+    "array_push": true,
+    "backtick_to_shell_exec": true,
+    "date_time_immutable": true,
+    "lowercase_keywords": true,
+    "lowercase_static_reference": true,
+    "no_unused_imports": true,
+    "global_namespace_import": {
+      "import_classes": true,
+      "import_constants": true,
+      "import_functions": true
+    },
+    "mb_str_functions": true,
+    "modernize_types_casting": true,
+    "new_with_parentheses": false,
+    "no_superfluous_elseif": true,
+    "no_useless_else": true,
+    "no_multiple_statements_per_line": true,
+    "declare_strict_types": true,
+    "array_syntax": true,
+    "method_argument_space": true,
+    "trailing_comma_in_multiline": {
+      "elements": [
+        "arguments",
+        "array_destructuring",
+        "arrays",
+        "match",
+        "parameters"
+      ],
+      "after_heredoc": true
+    },
+    "braces": {
+      "position_after_functions_and_oop_constructs": "next",
+      "position_after_control_structures": "same"
+    },
+    "class_definition": {
+      "single_line": true,
+      "single_item_single_line": true,
+      "multi_line_extends_each_single_line": false,
+      "space_before_parenthesis": true
+    },
+    "comment_to_phpdoc": {
+      "ignored_tags": [
+        "todo",
+        "see",
+        "link"
+      ]
+    },
+    "ordered_class_elements": {
+      "order": [
+        "use_trait",
+        "case",
+        "constant",
+        "constant_public",
+        "constant_protected",
+        "constant_private",
+        "property_public",
+        "property_protected",
+        "property_private",
+        "construct",
+        "destruct",
+        "magic",
+        "phpunit",
+        "method_abstract",
+        "method_public_static",
+        "method_public",
+        "method_protected_static",
+        "method_protected",
+        "method_private_static",
+        "method_private"
+      ],
+      "sort_algorithm": "none"
+    },
+    "ordered_interfaces": true,
+    "ordered_traits": true,
+    "protected_to_private": false,
+    "self_accessor": true,
+    "self_static_accessor": true,
+    "strict_comparison": false,
+    "visibility_required": true,
+    "concat_space": false,
+    "curly_braces_position": {
+      "anonymous_classes_opening_brace": "same_line"
+    },
+    "function_declaration": {
+      "closure_fn_spacing": "none"
+    },
+    "fully_qualified_strict_types": {
+      "import_symbols": true,
+      "leading_backslash_in_global_namespace": false
+    },
+    "is_null": false,
+    "increment_style": {
+      "style": "post"
+    },
+    "general_phpdoc_tag_rename": {
+      "replacements": {
+        "inheritDocs": "inheritdoc",
+        "inheritDoc": "inheritdoc"
+      }
+    },
+    "new_with_braces": {
+      "anonymous_class": false,
+      "named_class": false
+    },
+    "no_leading_import_slash": true,
+    "no_unreachable_default_argument_value": false,
+    "no_superfluous_phpdoc_tags": false,
+    "native_constant_invocation": {
+      "strict": false,
+      "fix_built_in": false
+    },
+    "not_operator_with_successor_space": false,
+    "ordered_imports": {
+      "sort_algorithm": "alpha"
+    },
+    "phpdoc_align": {
+      "align": "left",
+      "tags": [
+        "param",
+        "property",
+        "property-read",
+        "property-write",
+        "var",
+        "type",
+        "throws",
+        "return"
+      ]
+    },
+    "phpdoc_tag_type": {
+      "tags": {
+        "api": "annotation",
+        "author": "annotation",
+        "copyright": "annotation",
+        "deprecated": "annotation",
+        "example": "annotation",
+        "global": "annotation",
+        "internal": "annotation",
+        "license": "annotation",
+        "method": "annotation",
+        "package": "annotation",
+        "param": "annotation",
+        "property": "annotation",
+        "return": "annotation",
+        "see": "annotation",
+        "since": "annotation",
+        "throws": "annotation",
+        "todo": "annotation",
+        "uses": "annotation",
+        "var": "annotation",
+        "version": "annotation"
+      }
+    },
+    "phpdoc_order": {
+      "order": [
+        "param",
+        "throw",
+        "return"
+      ]
+    },
+    "phpdoc_return_self_reference": {
+      "replacements": {
+        "this": "$this",
+        "@this": "$this",
+        "$self": "static",
+        "@self": "static",
+        "$static": "static",
+        "@static": "static"
+      }
+    },
+    "phpdoc_separation": {
+      "groups": [
+        [
+          "deprecated",
+          "link",
+          "see",
+          "since"
+        ],
+        [
+          "author",
+          "copyright",
+          "license"
+        ],
+        [
+          "category",
+          "package",
+          "subpackage"
+        ],
+        [
+          "param",
+          "property",
+          "property-read",
+          "property-write"
+        ],
+        [
+          "return"
+        ],
+        [
+          "OA\\*"
+        ]
+      ]
+    },
+    "phpdoc_tag_casing": {
+      "tags": [
+        "inheritdoc"
+      ]
+    },
+    "phpdoc_var_without_name": false,
+    "phpdoc_to_return_type": true,
+    "phpdoc_types_order": {
+      "null_adjustment": "always_last"
+    },
+    "phpdoc_no_empty_return": true,
+    "single_import_per_statement": true
+  }
+}
