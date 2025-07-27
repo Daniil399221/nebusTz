@@ -1,66 +1,167 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏢 NebusTz API
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## ✨ Возможности
 
-## About Laravel
+- **🏗️ Управление зданиями** - работа с объектами недвижимости с геолокацией
+- **📋 Виды деятельности** - иерархическая структура видов деятельности
+- **📍 Геопоиск** - поиск организаций и зданий по радиусу
+- **🔐 Безопасность** - API ключ аутентификация
+- **📚 Swagger документация** - автоматическая генерация API документации
+- **🧪 Тестирование** - полное покрытие тестами с Pest
+- **🚀 Современный стек** - Laravel 10, PHP 8.3, современные пакеты
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🏗️ Архитектура
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Проект построен на Laravel 10
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Models**: Organization, Building, Activity, User
+- **Controllers**: RESTful контроллеры с валидацией
+- **Services**: Бизнес-логика вынесена в сервисные классы
+- **Resources**: API ресурсы для форматирования ответов
+- **Middleware**: Кастомная аутентификация через API ключ
+- **Testing**: Feature и Unit тесты с Pest
 
-## Learning Laravel
+## 🚀 Быстрый старт
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Требования
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- PHP 8.3+
+- Composer
+- PostgreSQL
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Установка
 
-## Laravel Sponsors
+1. **Клонируйте репозиторий**
+```bash
+git clone <repository-url>
+cd nebusTz/api
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+2. **Установите зависимости**
+```bash
+composer install
+```
 
-### Premium Partners
+3. **Настройте окружение**
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+5. **Запуск docker**
+```bash
+В корне nebuzTz
+docker-compose up
+```
 
-## Contributing
+4. **Настройте базу данных**
+```bash
+php artisan migrate
+php artisan db:seed
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 📚 API Endpoints
 
-## Code of Conduct
+### 🔐 Аутентификация
+Все API endpoints защищены статическим API ключом через middleware `ApiStaticKey` - fa30-k4v9-5316-kEQ.
+Можно поменять в .env
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 🏢 Организации
 
-## Security Vulnerabilities
+| Метод | Endpoint | Описание |
+|-------|----------|----------|
+| `GET` | `/api/organization/{id}` | Получить организацию по ID |
+| `GET` | `/api/organization/search/name` | Поиск организаций по названию |
+| `GET` | `/api/organization/radius` | Поиск организаций в радиусе |
+| `GET` | `/api/organization/buildings/{id}/organizations` | Организации в здании |
+| `GET` | `/api/organization/activity/{id}/organizations` | Организации по виду деятельности |
+| `GET` | `/api/organization/activity/{id}/organizations-with-children` | Организации с дочерними видами деятельности |
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 🏗️ Здания
 
-## License
+| Метод | Endpoint | Описание |
+|-------|----------|----------|
+| `GET` | `/api/buildings` | Список всех зданий |
+| `GET` | `/api/buildings/{id}` | Получить здание по ID |
+| `GET` | `/api/buildings/radius` | Поиск зданий в радиусе |
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 📋 Виды деятельности
+
+| Метод | Endpoint | Описание |
+|-------|----------|----------|
+| `GET` | `/api/activity` | Список всех видов деятельности |
+| `GET` | `/api/activity/{id}` | Получить вид деятельности по ID |
+
+## 🗄️ Структура базы данных
+
+### Organizations
+- `id` - UUID первичный ключ
+- `name` - Название организации
+- `phone` - Телефон
+- `building_id` - Связь с зданием
+- `activity_id` - Связь с видом деятельности
+- `slug` - URL-friendly название
+
+### Buildings
+- `id` - Первичный ключ
+- `address` - Адрес здания
+- `latitude` - Широта
+- `longitude` - Долгота
+
+### Activities
+- `id` - Первичный ключ
+- `name` - Название вида деятельности
+- `parent_id` - Родительский вид деятельности
+- `level` - Уровень в иерархии
+
+## 🧪 Тестирование
+
+Проект использует Pest для тестирования:
+
+```bash
+composer test:unit
+```
+
+## 📖 Документация API
+
+Swagger документация автоматически генерируется:
+
+```bash
+# Генерация документации
+php artisan l5-swagger:generate
+```
+
+Документация доступна по адресу: `http://localhost:92/api/documentation`
+
+## 🛠️ Разработка
+
+### Code Style
+Проект использует Laravel Pint для форматирования кода:
+
+```bash
+composer lint
+```
+
+### Рефакторинг
+Используется Rector для автоматического рефакторинга:
+
+```bash
+composer rector
+```
+
+## 📦 Используемые пакеты
+
+### Основные
+- **Laravel 10** - PHP фреймворк
+- **Laravel Sanctum** - API аутентификация
+- **L5-Swagger** - Swagger документация
+- **Spatie Laravel Data** - Data Transfer Objects
+- **Spatie Laravel Sluggable** - Автоматические slug'и
+
+### Разработка
+- **Pest** - Тестирование
+- **Laravel Pint** - Code style
+- **Rector** - Рефакторинг
+- **Laravel Dusk** - Browser тестирование
+- **Проект**: NebusTz API
+

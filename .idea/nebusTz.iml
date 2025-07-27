@@ -166,6 +166,16 @@
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/swagger-api/swagger-ui" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/zircote/swagger-php" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/brianium/paratest" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/fidry/cpu-core-counter" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/jean85/pretty-package-versions" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/laravel/dusk" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/pestphp/pest" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/pestphp/pest-plugin" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/pestphp/pest-plugin-arch" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/pestphp/pest-plugin-laravel" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/php-webdriver/webdriver" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/ta-tikoma/phpunit-architecture-test" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

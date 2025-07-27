@@ -175,6 +175,16 @@
       <path value="$PROJECT_DIR$/api/vendor/swagger-api/swagger-ui" />
       <path value="$PROJECT_DIR$/api/vendor/doctrine/annotations" />
       <path value="$PROJECT_DIR$/api/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/api/vendor/fidry/cpu-core-counter" />
+      <path value="$PROJECT_DIR$/api/vendor/ta-tikoma/phpunit-architecture-test" />
+      <path value="$PROJECT_DIR$/api/vendor/jean85/pretty-package-versions" />
+      <path value="$PROJECT_DIR$/api/vendor/pestphp/pest-plugin" />
+      <path value="$PROJECT_DIR$/api/vendor/pestphp/pest-plugin-arch" />
+      <path value="$PROJECT_DIR$/api/vendor/pestphp/pest" />
+      <path value="$PROJECT_DIR$/api/vendor/brianium/paratest" />
+      <path value="$PROJECT_DIR$/api/vendor/pestphp/pest-plugin-laravel" />
+      <path value="$PROJECT_DIR$/api/vendor/laravel/dusk" />
+      <path value="$PROJECT_DIR$/api/vendor/php-webdriver/webdriver" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.3" />
