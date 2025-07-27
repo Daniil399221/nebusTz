@@ -21,7 +21,6 @@ class OrganizationFindService
     }
 
     /**
-     *
      * Поиск организации по названию
      */
     public function getFindOrganizationsInName(array $data)
@@ -31,5 +30,4 @@ class OrganizationFindService
             ->with(['building', 'activity'])
             ->paginate(15);
     }
-
 }

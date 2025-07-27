@@ -170,9 +170,19 @@
       <path value="$PROJECT_DIR$/api/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/api/vendor/phpunit/php-text-template" />
       <path value="$PROJECT_DIR$/api/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/api/vendor/zircote/swagger-php" />
+      <path value="$PROJECT_DIR$/api/vendor/darkaonline/l5-swagger" />
+      <path value="$PROJECT_DIR$/api/vendor/swagger-api/swagger-ui" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/api/vendor/psr/cache" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.3" />
+  <component name="PhpStan">
+    <PhpStan_settings>
+      <PhpStanConfiguration tool_path="$PROJECT_DIR$/api/vendor/bin/phpstan" />
+    </PhpStan_settings>
+  </component>
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>
