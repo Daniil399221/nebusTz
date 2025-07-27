@@ -1,8 +1,5 @@
 {
   "preset": "laravel",
-  "exclude": [
-    "frame"
-  ],
   "rules": {
     "array_push": true,
     "backtick_to_shell_exec": true,
