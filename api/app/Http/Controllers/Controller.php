@@ -12,8 +12,8 @@ use OpenApi\Attributes\Info;
 
 #[Info(
     version: '1.0.0',
-    title: 'Название приложения',
-    contact: new Contact(name: 'Название приложения'),
+    title: 'Swagger Nebus',
+    contact: new Contact(name: 'Swagger Nebus'),
 )]
 class Controller extends BaseController
 {
